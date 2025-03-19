@@ -154,7 +154,9 @@
 
       window.addEventListener('scroll', function() {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop) {
+        const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+
+        if (scrollTop > lastScrollTop && scrollTop < maxScroll) {
           // Scroll down
           navbar.style.top = '-95px'; // Adjust this value based on your navbar height
         } else if (scrollTop < lastScrollTop && scrollTop > 0) {
