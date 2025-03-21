@@ -10,6 +10,7 @@ O **Perfect Girlfriend** é um site dedicado a expressar amor e admiração pela
 - **CSS3**
 - **Bootstrap 5**
 - **JavaScript**
+- **API Intersection Observer**
 
 ## 📌 Status do Projeto
 🔧 **Em construção**: O projeto está sendo desenvolvido e novas funcionalidades serão adicionadas em breve.
