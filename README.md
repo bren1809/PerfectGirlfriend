@@ -16,10 +16,9 @@ O **Perfect Girlfriend** é um site dedicado a expressar amor e admiração pela
 🔧 **Em construção**: O projeto está sendo desenvolvido e novas funcionalidades serão adicionadas em breve.
 
 ## 📸 Recursos Planejados
-- Seção **Hero** estilizada com um **card**.
-- Galeria de fotos com **Lightbox**.
-- Efeitos de animação com **AOS**.
-- Ícones estilizados com **Font Awesome**.
+- Desenvolvimento com **Bootstrap**.
+- Animações no **JavaScript** juntamente com **APIs**.
+- Conteúdo **responsivo** com boa visibilidade em **Dispositivos móveis**.
 
 ## 📂 Como Rodar o Projeto
 1. Clone o repositório:
