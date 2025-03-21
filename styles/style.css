@@ -82,6 +82,13 @@
     transition: none;
   }
 
+  .section-divider {
+    border: 0;
+    height: 2px;
+    background-color: #DEDEDE; 
+    margin: 55px 0px;
+  }
+
   /* para removar a margin e outras aplicações em dispositivos menores*/
   @media (max-width: 768px) {
 
