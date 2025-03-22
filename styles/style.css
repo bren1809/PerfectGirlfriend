@@ -11,6 +11,7 @@
     height: 100vh;
     background-color: #2B3036;
     color: aliceblue;
+
   }
   
 
@@ -89,6 +90,27 @@
     margin: 55px 0px;
   }
 
+  /* Ajustar o tamanho do carrossel */
+  .custom-carousel {
+    width: 90%;
+    max-width: 400px;
+    margin: 27px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .custom-carousel:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .carousel-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 3px solid rgb(207, 204, 204);
+    border-radius: 10px;
+  }
+ 
 
   /* para removar a margin e outras aplicações em dispositivos menores*/
   @media (max-width: 768px) {
@@ -100,8 +122,30 @@
     .container-card {
       margin: 0;
     }
+
+    .custom-carousel {
+      width: 100%;
+    }
+
+    .carousel-image {
+      height: 300px;
+      object-fit: cover;
   }
+
 
   .offcanvas-title {
     margin-left: 70px;
   }
+
+}
+
+  @media (max-width: 480px) {
+  .custom-carousel {
+    width: 100%;
+  }
+
+  .carousel-image {
+    height: 400px;
+    object-fit: cover;
+  }
+}
