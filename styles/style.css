@@ -9,7 +9,7 @@
   body {
     margin: 0;
     height: 100vh;
-    background-color: #2B3036;
+    background-color:#14171A;
     color: aliceblue;
 
   }
@@ -27,13 +27,6 @@
     font-weight: 400;
     font-style: normal;
     font-size: 45px;
-  }
-
-  /* sumir o nome do site em certo tamanho de dispositivo por causa do espaço */
-  @media (max-width: 550px)  {
-      .titulo-navbar {
-        display: none;
-      }
   }
 
   .romantic-text {
@@ -97,24 +90,46 @@
     max-width: 400px;
     margin: 27px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #A6DE8E;
+    border-radius: 10px;
   }
 
   .custom-carousel:hover {
     transform: scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 10px #A6DE8E, 0 0 10px #A6DE8E, 0 0 10px #A6DE8E;
   }
 
   .carousel-image {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border: 3px solid rgb(207, 204, 204);
+  }
+
+  .neon-border {
+    border: 2px solid #A6DE8E;
+    box-shadow: 0 0 10px #A6DE8E, 0 0 10px #A6DE8E, 0 0 10px #A6DE8E;
     border-radius: 10px;
+  }
+  
+  .neon-border:hover {
+    box-shadow: 0 0 10px #A6DE8E, 0 0 15px #A6DE8E, 0 0 15px #A6DE8E;
   }
  
 
   /* para removar a margin e outras aplicações em dispositivos menores*/
   @media (max-width: 768px) {
+
+    #container-principal {
+      padding: 0 !important;
+    }
+
+    #titulo-principal {
+      font-size: 45px;
+    }
+
+    .titulo-conteudo {
+      font-size: 37px;
+    }
 
     .container-text {
       margin: 0;
@@ -129,13 +144,13 @@
     }
 
     .carousel-image {
-      height: 300px;
+      height: 100%;
       object-fit: cover;
   }
 
 
   .offcanvas-title {
-    margin-left: 70px;
+    margin-left: none;
   }
 
 }
@@ -148,5 +163,12 @@
   .carousel-image {
     height: 400px;
     object-fit: cover;
+  }
+}
+
+/* sumir o nome do site em certo tamanho de dispositivo por causa do espaço */
+@media (max-width: 587px)  {
+  .titulo-navbar {
+    display: none;
   }
 }
