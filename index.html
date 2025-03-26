@@ -203,7 +203,7 @@
             </p>
 
           <div class="row mt-4 justify-content-center">
-            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3">
+            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3 animation-mouse">
               <div class="card neon-border fade-in" style="background-color: #434C54; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title" style="color: #A6DE8E;">Bondade</h5>
@@ -214,7 +214,7 @@
               </div>
             </div>
             <!-- Característica 2 -->
-            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3">
+            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3 animation-mouse">
               <div class="card neon-border fade-in" style="background-color: #434C54; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title" style="color: #A6DE8E;">Elegância</h5>
@@ -225,7 +225,7 @@
               </div>
             </div>
             <!-- Característica 3 -->
-            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3">
+            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3 animation-mouse">
               <div class="card neon-border fade-in" style="background-color: #434C54; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title" style="color: #A6DE8E;">Personalidade</h5>
@@ -236,7 +236,7 @@
               </div>
             </div>
             <!-- Característica 4 -->
-            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3">
+            <div class="col-12 col-md-5 col-lg-3 text-center mb-4 mt-3 animation-mouse">
               <div class="card neon-border fade-in" style="background-color: #434C54; border-radius: 10px;">
                 <div class="card-body">
                   <h5 class="card-title" style="color: #A6DE8E;">Inspiração</h5>
@@ -264,6 +264,22 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
+
+      const caracteristicas = document.querySelectorAll('.animation-mouse');
+
+      // Adiciona o evento de clique a cada tópico
+      caracteristicas.forEach(caracteristica => {
+        caracteristica.addEventListener('click', () => {
+          if (caracteristica.classList.contains('active')) {
+            caracteristica.classList.remove('active'); // Remove o destaque se já estiver ativo
+          } else {
+            // Remove a classe 'active' de todos os tópicos
+            caracteristicas.forEach(c => c.classList.remove('active'));
+            // Adiciona a classe 'active' ao tópico clicado
+            caracteristica.classList.add('active');
+    }
+        });
+      });
 
 
           // Detectar quando o modal é aberto
