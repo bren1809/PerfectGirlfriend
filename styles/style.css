@@ -62,7 +62,7 @@
   .fade-in {
     opacity: 0;
     transform: translateY(20px); /* Move o texto para baixo inicialmente */
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out; /* Animação suave */
+    transition: opacity 2s ease-out, transform 2s ease-out; /* Animação suave */
   }
 
   .fade-in.show {
@@ -114,12 +114,20 @@
   .neon-border:hover {
     box-shadow: 0 0 10px #A6DE8E, 0 0 15px #A6DE8E, 0 0 15px #A6DE8E;
   }
+
+  .responsive-hr {
+    display: none;
+  }
  
 
   /* para removar a margin e outras aplicações em dispositivos menores*/
   @media (max-width: 768px) {
 
     #container-principal {
+      padding: 0 !important;
+    }
+
+    #container-secundario{
       padding: 0 !important;
     }
 
@@ -148,9 +156,16 @@
       object-fit: cover;
   }
 
-
   .offcanvas-title {
     margin-left: none;
+  }
+
+  .responsive-hr {
+    display: block;
+    border: 0;
+    height: 2px;
+    background-color: #DEDEDE;
+    margin: 20px 0;
   }
 
 }
