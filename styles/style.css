@@ -13,6 +13,15 @@
     color: aliceblue;
 
   }
+
+  footer {
+    position: relative; /* Ajuste para fixar no final da página */
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    background-color: #0E1012; /* Cor de fundo */
+    color: #DEDEDE; /* Cor do texto */
+  }
   
 
   .logo-navbar {
@@ -52,6 +61,7 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
   }
 
+
   /* efeito do navbar escondendo*/
   #navbar {
     transition: top 0.3s;
@@ -82,7 +92,6 @@
   .animation-mouse:hover,
   .animation-mouse.active {
     transform: scale(1.07);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
 
   .fade-in {

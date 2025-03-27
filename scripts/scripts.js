@@ -4,6 +4,7 @@ const modal = document.getElementById("exampleModal");
 const caracteristicas = document.querySelectorAll('.animation-mouse');
 const navbar = document.getElementById('navbar');
 
+
 function adjustAlertPosition() {
     if (navbar.style.top === '-95px') {
         alertPlaceholder.style.top = '0';
