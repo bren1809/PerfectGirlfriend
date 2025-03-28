@@ -126,9 +126,11 @@
             </div>
 
             <!-- Conteúdo de textos -->
+
+              
+
               <div class="container-fluid" style="margin-top: 120px;">
-                <hr class="section-divider">
-                <h2 class="text-center mb-5 pr-titule display-4 display-md-3 titulo-conteudo fade-in" style="color: #DEDEDE; font-weight: 500;">Quem somos?</h2>
+                <h2 class="text-center mt-5 pr-titule display-4 display-md-3 titulo-conteudo fade-in" style="color: #DEDEDE; font-weight: 500;">Quem somos?</h2>
                 <div class="d-flex flex-column align-items-center">
                   <img src="./assets/logo_letra_verde.png" class="mt-3 fade-in" style="width: 115px;">
                   <img src="./assets/logo_white_background2.png" class=" fade-in" style="width: 220px;">
@@ -142,10 +144,9 @@
                     Gabriely não é apenas uma pessoa especial, ela é o significado de felicidade, amor e inspiração em minha vida.
                   </p>
 
-
-                  
-
                 </div>
+
+                
 
                 <hr class="section-divider">
                 <h2 class="text-center mt-5 pr-titule display-4 display-md-3 titulo-conteudo fade-in" style="color: #DEDEDE; font-weight: 500;">Qual o nosso propósito?</h2>
@@ -194,10 +195,18 @@
 
 
         <!-- Coluna secundária -->
+
+        <!-- Barra para separar conteúdo-->
+        <div class="row align-items-start justify-content-center barra-divisao">
+          <div class="col-12 col-sm-12 rounded" style="padding: 40px; background-color: #212529;">
+            <hr class="section-divider responsive-hr">
+          </div>
+        </div>
+
+
         <div class="container-fluid"
          <div class="row align-items-start justify-content-center" id="container-secundario" style="padding: 0 50px 50px;">
           <div class="col-12 col-sm-12 rounded" style="padding: 40px; background-color: #212529;">
-            <hr class="section-divider responsive-hr">
             <h2 class="text-center mt-5 pr-titule display-4 display-md-3 titulo-conteudo" style="color: #DEDEDE; font-weight: 500;">Princípais características</h2>
             <p class="text-center mt-5" style="font-size: 18px;">
               Gabriely é uma pessoa única, com qualidades que encantam e inspiram. Aqui estão algumas de suas principais características:
@@ -261,21 +270,36 @@
 
 
         </div>
-          
-          
-        </div>
+                   
         </div>
 
+      </div>
+
+    <div class="row align-items-start justify-content-center barra-divisao">
+      <div class="col-12 col-sm-12 rounded remove-padding-bottom" style="padding: 40px; background-color: #212529;">
+        <hr class="section-divider responsive-hr">
+      </div>
+    </div>
+
         <!-- Coluna terciária -->
-          <div class="col-md-4 col-sm-12 rounded" style="padding: 40px; background-color: #212529;">
-            <h5 class="text-center text-white"></h5>
-            <p class="text-white">Mais conteúdo pode ser adicionado aqui.</p>
-          </div>
+        <div class="container-fluid">
+            <div class="row align-items-start justify-content-center" id="container-terciario" style="padding: 0 50px 50px;">
+              <div class="col-12 col-sm-12 rounded remove-padding-top" style="padding: 40px; background-color: #212529;">
+                <h2 class="text-center mt-5 pr-titule display-4 display-md-3 titulo-conteudo" style="color: #DEDEDE; font-weight: 500;">Quiz</h2>
+                <h3 class="text-center mt-3 mb-5">Quanto você conhece a Gabriely?</h3>
+                <div id="quiz-container" class="mt-4">
+                  <!-- Perguntas do quiz serão geradas dinamicamente aqui -->
+                </div>
+                <div class="text-center mt-4">
+                  <button id="submitQuiz" class="btn btn-success">Enviar Respostas</button>
+                  <p id="quizResult" class="mt-3 text-white" style="font-size: 18px;"></p>
+              </div>
+            </div>
         </div>
       </div>
 
 
-      <footer class="bg-dark text-center text-white py-3 mt-5">
+      <footer class="text-center text-white py-3 mt-5" id="rodape">
         <p class="mb-0">Desenvolvido por <strong>Brener</strong></p>
       </footer>
       

@@ -54,8 +54,6 @@ alertButton.addEventListener('click', () => {
 });
   
   // Adiciona o evento de clique a cada tópico
-
-
   caracteristicas.forEach(caracteristica => {
     caracteristica.addEventListener('click', () => {
       if (caracteristica.classList.contains('active')) {
@@ -70,7 +68,7 @@ alertButton.addEventListener('click', () => {
   });
 
 
-      // Detectar quando o modal é aberto
+  // Detectar quando o modal é aberto
   modal.addEventListener("show.bs.modal", () => {
     document.body.classList.add("modal-open");
   });
@@ -117,3 +115,96 @@ alertButton.addEventListener('click', () => {
     }
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
+
+
+
+
+  // Perguntas do quiz
+const quizQuestions = [
+  {
+    question: "Qual é o doce favorito da Gabriely?",
+    options: ["Mousse de maracujá", "Doce de leite", "Torta de limão", "Chocolate"],
+    answer: "Chocolate"
+  },
+  {
+    question: "Qual é o hobby favorito da Gabriely?",
+    options: ["Academia", "Assistir séries", "Cozinhar", "Ler livros"],
+    answer: "Academia"
+  },
+  {
+    question: "Qual é a cor favorita da Gabriely?",
+    options: ["Rosa", "Verde", "Azul", "Preto"],
+    answer: "Verde"
+  },
+  {
+    question: "Qual é o maior sonho da Gabriely?",
+    options: ["Viajar pelo mundo", "Ter uma casa própria", "Ser reconhecida profissionalmente", "Ter uma família feliz"],
+    answer: "Viajar pelo mundo"
+  },
+  {
+    question: "Qual é o nome da mãe da Gabriely?",
+    options: ["Maria", "Cecília", "Roberta", "Carla"],
+    answer: "Cecília"
+  }
+];
+
+// Gera o quiz dinamicamente
+const quizContainer = document.getElementById("quiz-container");
+
+quizQuestions.forEach((q, index) => {
+  const card = document.createElement("div");
+  card.classList.add("quiz-card");
+
+  const questionHTML = `
+    <h5>${index + 1}. ${q.question}</h5>
+    <div>
+      ${q.options
+        .map(
+          (option, i) => `
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="question${index}" id="q${index}o${i}" value="${option}">
+          <label class="form-check-label" for="q${index}o${i}">
+            ${option}
+          </label>
+        </div>
+      `
+        )
+        .join("")}
+    </div>
+  `;
+
+  card.innerHTML = questionHTML;
+  quizContainer.appendChild(card);
+});
+
+// Calcula o resultado do quiz
+document.getElementById("submitQuiz").addEventListener("click", () => {
+  let score = 0;
+  let allAnswered = true;
+
+  quizQuestions.forEach((q, index) => {
+    const selectedOption = document.querySelector(`input[name="question${index}"]:checked`);
+    if (!selectedOption) {
+      allAnswered = false;
+    } else if (selectedOption.value === q.answer) {
+      score++;
+    }
+  });
+
+  const quizResult = document.getElementById("quizResult");
+
+  if (!allAnswered) {
+    // Exibe mensagem de erro se nem todas as perguntas foram respondidas
+    quizResult.textContent = "Por favor, selecione uma resposta para todas as perguntas antes de enviar!";
+    quizResult.style.color = "#FF6B6B"; // Cor vermelha para mensagem de erro
+  } else {
+    // Exibe o resultado se todas as perguntas foram respondidas
+    const resultText = `Você acertou ${score} de ${quizQuestions.length} perguntas!`;
+    quizResult.textContent = resultText;
+    quizResult.style.color = score === quizQuestions.length ? "#A6DE8E" : "#FF6B6B"; // Verde para todas corretas, vermelho para erros
+
+      document.querySelectorAll("input[type='radio']").forEach((input) => {
+        input.disabled = true;
+      });
+  }
+});
