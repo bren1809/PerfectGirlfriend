@@ -56,9 +56,36 @@
   }
 
   #liveAlertBtn:hover {
-    transform: scale(1.05); /* Aumenta o botão levemente */
+    transform: scale(1.05);
     transition: 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  #backToTop {
+    background-color: #A6DE8E;
+    color: black;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s ease;
+  }
+  
+  #backToTop:hover {
+    background-color: #8BCF6E;
+    cursor: pointer;
+  }
+
+  #backToTop img {
+    width: 24px;
+    height: 24px;
+    transform: rotate(90deg);
+    margin-top: -5px ;
   }
 
 
@@ -164,7 +191,7 @@
     transition: transform 0.3s ease, box-shadow 0.3ease;
   }
 
-  #rodape {
+  .rodape {
     background-color: #212529;
   }
 
@@ -198,16 +225,33 @@
   .barra-divisao {
     display: none;
   }
+
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: #A6DE8E;
+    box-shadow: 0 0 10px #A6DE8E;
+    transition: 0.3s ease;
+  }
+
+  #messageFeedback {
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  a:hover i {
+    color: #A6DE8E; /* Cor ao passar o mouse */
+    transition: color 0.3s ease;
+  }
  
 
   /* para removar a margin e outras aplicações em dispositivos menores*/
-  @media (max-width: 768px) {
+  @media (max-width: 767px) {
   
     body {
       background-color: #212529;
     }
 
-    #rodape {
+    .rodape {
       background-color: #14171A;
     }
 
@@ -226,6 +270,23 @@
 
     #titulo-principal {
       font-size: 45px;
+    }
+
+    #titulo-contato {
+      margin-top: 0 !important;
+      font-size: 30px;
+      margin-right: 8px;
+      margin-bottom: 30px;
+    }
+
+    #container-contato {
+      padding: 0 !important;
+      margin: none;
+      width: none;
+    }
+
+    #container1-contato {
+      padding: 0 !important;
     }
 
     .remove-padding-bottom {
