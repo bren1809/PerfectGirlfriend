@@ -239,8 +239,46 @@
   }
 
   a:hover i {
-    color: #A6DE8E; /* Cor ao passar o mouse */
+    color: #A6DE8E;
     transition: color 0.3s ease;
+  }
+
+  .img-academia {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border: 2px solid #A6DE8E;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(166, 222, 142, 0.6), 0 0 20px rgba(166, 222, 142, 0.4);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .img-academia:hover {
+    box-shadow: 0 0 15px rgba(166, 222, 142, 0.8), 0 0 30px rgba(166, 222, 142, 0.6);
+    transform: scale(1.05);
+  }
+
+  .motivacao-section {
+
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px #212529 ;
+  }
+  
+  .motivacao-section h3 {
+    color: #A6DE8E;
+  }
+  
+  .motivacao-section .list-group-item {
+    background-color: #495057;
+    color: white;
+    border: none;
+  }
+  
+  .motivacao-section .list-group-item:hover {
+    background-color: #A6DE8E;
+    color: black;
+    transition: background-color 0.3s ease;
   }
  
 
@@ -255,6 +293,9 @@
       background-color: #14171A;
     }
 
+    #img-academia2 {
+      margin-top: 50px ;
+    }
 
     #container-principal {
       padding: 0 !important;
