@@ -161,9 +161,9 @@ quizQuestions.forEach((q, index) => {
       ${q.options
         .map(
           (option, i) => `
-        <div class="form-check">
-          <input class="form-check-input" type="radio" name="question${index}" id="q${index}o${i}" value="${option}">
-          <label class="form-check-label" for="q${index}o${i}">
+        <div class="form-check fade-in">
+          <input class="form-check-input fade-in" type="radio" name="question${index}" id="q${index}o${i}" value="${option}">
+          <label class="form-check-label fade-in" for="q${index}o${i}">
             ${option}
           </label>
         </div>

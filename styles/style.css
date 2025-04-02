@@ -94,6 +94,20 @@
     transition: top 0.3s;
   }
 
+  #chocolate-foto {
+    max-width: 100%;
+    width: auto;
+    border: 2px solid #A6DE8E;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(166, 222, 142, 0.6), 0 0 20px rgba(166, 222, 142, 0.4);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  #chocolate-foto:hover {
+    box-shadow: 0 0 15px rgba(166, 222, 142, 0.8), 0 0 30px rgba(166, 222, 142, 0.6);
+    transform: scale(1.05);
+  }
+
   .container-text {
     margin-left: 40px;
     max-width: 276px;
@@ -124,7 +138,7 @@
   .fade-in {
     opacity: 0;
     transform: translateY(20px); /* Move o texto para baixo inicialmente */
-    transition: opacity 2s ease-out, transform 2s ease-out; /* Animação suave */
+    transition: opacity 1.6s ease-out, transform 1.6s ease-out; /* Animação suave */
   }
 
   .fade-in.show {
@@ -280,6 +294,139 @@
     color: black;
     transition: background-color 0.3s ease;
   }
+
+  .receitas-container {
+    background-color: #1c1f24;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .receita-item {
+    background-color: #2a2d33;
+    color: #DEDEDE;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .receita-item h5 {
+    color: #A6DE8E;
+    margin-bottom: 8px;
+  }
+  
+  .receita-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #B0B0B0;
+  }
+  
+  .receita-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+
+  curiosidades-container {
+    background-color: #1c1f24;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .curiosidade-item {
+    display: flex;
+    align-items: center;
+    background-color: #2a2d33;
+    color: #DEDEDE;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .curiosidade-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+  }
+  
+  .curiosidade-icon {
+    font-size: 24px;
+    color: #A6DE8E;
+    margin-right: 15px;
+  }
+  
+  .curiosidade-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #B0B0B0;
+  }
+
+  .marcas-container {
+    display: flex;
+    max-width: 580px;
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    background-color: #1c1f24; /* Fundo escuro */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+  }
+  
+  .marca-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #2a2d33; /* Fundo dos itens */
+    color: #DEDEDE; /* Cor do texto */
+    padding: 15px;
+    width: 120px; /* Largura fixa para os itens */
+    height: 120px; /* Altura fixa para os itens */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+  }
+  
+  .marca-item:hover {
+    transform: scale(1.05); /* Aumenta levemente ao passar o mouse */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4); /* Sombra ao passar o mouse */
+  }
+  
+  .marca-icon {
+    font-size: 24px; /* Tamanho do ícone */
+    color: #A6DE8E; /* Cor do ícone */
+    margin-bottom: 10px; /* Espaço entre o ícone e o texto */
+  }
+  
+  .marca-item p {
+    margin: 0;
+    font-size: 14px;
+    color: #B0B0B0; /* Cor do texto secundário */
+    text-align: center;
+  }
+
+  #container-chocolate {
+    padding: 50px;
+  }
+
+  div#container1-chocolate {
+    background-image: url('../assets/chocolate-cobertura.png') !important;
+    background-color:#212529;
+    background-size: 41%;
+    background-repeat: repeat-x;
+    background-position: top center;
+  }
+
+  #titulo-chocolate {
+    color: #DEDEDE; /* Cor do texto */
+    font-weight: 500;
+    margin-top: 180px;
+    text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; /* Contorno preto */
+  }
+  
  
 
   /* para removar a margin e outras aplicações em dispositivos menores*/
@@ -291,6 +438,20 @@
 
     .rodape {
       background-color: #14171A;
+    }
+
+    #titulo-chocolate {
+      margin-top: 0 !important;
+    }
+
+    #container-chocolate {
+      padding: 0 !important;
+    }
+
+    div#container1-chocolate {
+      background-size: 70%; /* Aumenta o tamanho em telas menores */
+      padding-top: 50px; /* Reduz o espaço em dispositivos menores */
+      margin-top: 0 ;
     }
 
     #img-academia2 {
