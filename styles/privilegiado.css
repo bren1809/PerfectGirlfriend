@@ -160,9 +160,11 @@
     #titulo-principal {
       font-size: 45px;
     }
+    
+
 
     #titulo-contato {
-      margin-top: 0 !important;
+      margin-top: 0px !important;
       font-size: 30px;
       margin-right: 8px;
       margin-bottom: 30px;
@@ -192,7 +194,8 @@
     }
 
     .titulo-conteudo {
-      font-size: 37px;
+      font-size: 45px;
+      margin-top: 50px;
     }
 
     .container-text {
