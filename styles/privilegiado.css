@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background-color:#14171A;
+    color: aliceblue;
+
+  }
+
+  footer {
+    position: relative; /* Ajuste para fixar no final da página */
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    background-color: #0E1012; /* Cor de fundo */
+    color: #DEDEDE; /* Cor do texto */
+  }
+
+  #carrosselDecorativo {
+    max-width: 800px; /* Define uma largura máxima */
+    margin: 0 auto; /* Centraliza o carrossel */
+  }
+  
+  #carrosselDecorativo img {
+    height: 400px; /* Define uma altura fixa para as imagens */
+    object-fit: cover; /* Garante que as imagens sejam cortadas proporcionalmente */
+    border-radius: 10px; /* Bordas arredondadas */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    filter: brightness(0) invert(1); /* Torna os ícones brancos */
+  }
+  
+
+  .logo-navbar {
+    width: 25px;
+    height: 100%;
+    margin-right: 81px;
+  }
+
+  .titulo-navbar {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 45px;
+  }
+
+  #navbar {
+    transition: top 0.3s;
+  }
+
+  .rodape {
+    background-color: #212529;
+  }
+
+  .timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 2px solid #A6DE8E;
+  }
+  
+  .timeline li {
+    margin-bottom: 20px;
+    padding-left: 20px;
+    position: relative;
+  }
+  
+  .timeline li::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background-color: #A6DE8E;
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+    top: 5px;
+  }
+  
+  .timeline-date {
+    font-weight: bold;
+    color: #A6DE8E;
+    margin-bottom: 5px;
+    display: block;
+  }
+
+  .neon-border-privilegiado {
+    width: 90%;
+    max-width: 400px;
+    margin: 27px auto;
+    border: 2px solid #FFB6C1; /* Rosa claro */
+    border-radius: 10px;
+  }
+
+  .neon-border-privilegiado:hover {
+    transform: scale(1.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #FFB6C1, 0 0 10px #FFB6C1, 0 0 10px #FFB6C1; /* Intensifica o efeito ao passar o mouse */
+  }
+
+  .carousel-inner {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(22, 22, 22, 0.7), rgba(166, 222, 142, 0.2));
+  z-index: 1;
+  }
+
+
+
+  @media (max-width: 767px) {
+  
+    body {
+      background-color: #212529;
+    }
+
+    .rodape {
+      background-color: #14171A;
+    }
+
+    #titulo-chocolate {
+      margin-top: 0 !important;
+    }
+
+    #container-chocolate {
+      padding: 0 !important;
+    }
+
+    div#container1-chocolate {
+      background-size: 70%; /* Aumenta o tamanho em telas menores */
+      padding-top: 50px; /* Reduz o espaço em dispositivos menores */
+      margin-top: 0 ;
+    }
+
+    #img-academia2 {
+      margin-top: 50px ;
+    }
+
+    #container-principal {
+      padding: 0 !important;
+    }
+
+    #container-secundario{
+      padding: 0 !important;
+    }
+
+    #container-terciario{
+      padding: 0 !important;
+    }
+
+    #titulo-principal {
+      font-size: 45px;
+    }
+
+    #titulo-contato {
+      margin-top: 0 !important;
+      font-size: 30px;
+      margin-right: 8px;
+      margin-bottom: 30px;
+    }
+
+    #container-contato {
+      padding: 0 !important;
+      margin: none;
+      width: none;
+    }
+
+    #container1-contato {
+      padding: 0 !important;
+    }
+
+    .remove-padding-bottom {
+      padding-bottom: 0 !important;
+    }
+
+    .remove-padding-top {
+      padding-top: 0 !important ;
+    }
+
+    .barra-divisao {
+      display: flex;
+      margin: 0;
+    }
+
+    .titulo-conteudo {
+      font-size: 37px;
+    }
+
+    .container-text {
+      margin: 0;
+    }
+
+    .container-card {
+      margin: 0;
+    }
+
+    .custom-carousel {
+      width: 100%;
+    }
+
+    .carousel-image {
+      height: 100%;
+      object-fit: cover;
+  }
+
+  .offcanvas-title {
+    margin-left: none;
+  }
+
+  .responsive-hr {
+    display: block;
+    border: 0;
+    height: 2px;
+    background-color: #DEDEDE;
+    margin: 20px 0;
+  }
+
+}
+  

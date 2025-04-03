@@ -1,34 +1,76 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
-  * {
-    margin: 0;
-    padding: 0;
-  }
+ /* Reset & Variáveis Globais */
+:root {
+  --primary-color: #A6DE8E;
+  --dark-bg: #14171A;
+  --card-bg: #434C54;
+  --text-light: #DEDEDE;
+}
 
-  body {
-    margin: 0;
-    height: 100vh;
-    background-color:#14171A;
-    color: aliceblue;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  }
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+  min-height: 100vh;
+}
 
-  footer {
-    position: relative; /* Ajuste para fixar no final da página */
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    background-color: #0E1012; /* Cor de fundo */
-    color: #DEDEDE; /* Cor do texto */
-  }
+/* ----- Botões ----- */
+.btn-neon {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-neon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--primary-color);
+}
+
+/* ----- Cards ----- */
+.card-romantico {
+  background: var(--card-bg);
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.card-romantico:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(166, 222, 142, 0.3);
+}
   
 
-  .logo-navbar {
-    width: 25px;
-    height: 100%;
-    margin-right: 81px;
-  }
+  /* ----- Navbar ----- */
+.navbar-custom {
+  background: #0E1012;
+  transition: top 0.3s;
+}
+
+.logo-navbar {
+  width: 25px;
+  margin-right: 81px;
+}
+
+/* ----- Galeria de Fotos ----- */
+.gallery-img {
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.gallery-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--primary-color);
+}
 
   .titulo-navbar {
     font-family: "Montserrat", sans-serif;
