@@ -19,7 +19,7 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: var(--dark-bg);
   color: var(--text-light);
-  min-height: 100vh;
+  height: 100%;
 }
 
 /* ----- Botões ----- */
@@ -149,6 +149,8 @@ body {
     box-shadow: 0 0 15px rgba(166, 222, 142, 0.8), 0 0 30px rgba(166, 222, 142, 0.6);
     transform: scale(1.05);
   }
+  
+  
 
   .container-text {
     margin-left: 40px;
@@ -249,6 +251,7 @@ body {
 
   .rodape {
     background-color: #212529;
+    margin-top: auto;
   }
 
   #submitQuiz {

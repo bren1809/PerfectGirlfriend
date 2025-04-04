@@ -101,25 +101,101 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
   attribution: '© OpenStreetMap, © CartoDB'
 }).addTo(map);
 
-// Marcadores personalizados
+
+
+// Adicione após a criação do mapa
+const legend = L.control({ position: 'bottomright' });
+
+
+
+// Marcadores personalizados dos lugadores
 const lugares = [
+  // MOMENTOS ROMÂNTICOS (coração vermelho)
   {
-    coords: [-19.9175, -43.9346],
+    coords: [-19.9032298,-43.9235327,3],
     title: "Primeiro Beijo",
     icon: L.divIcon({
-      html: '<i class="bi bi-heart-fill fs-4 text-danger"></i>',
+      html: '<i class="bi bi-heart-fill fs-4" style="color: #FF6B6B"></i>',
       className: 'bg-transparent border-0'
     }),
-    popup: "Aquele momento mágico no parque ❤️"
+    popup: `
+      <b>Nosso primeiro beijo</b><br>
+      <small>Perto da sua Casa (o dia mais feliz da minha vida)</small><br>
+      <i>18/09/2023</i>
+    `
   },
   {
-    coords: [-19.9190, -43.9380],
-    title: "Restaurante Favorito",
+    coords: [-19.907181,-43.9217234,3], 
+    title: "Encontros pós escola",
     icon: L.divIcon({
-      html: '<i class="bi bi-shop-window fs-4" style="color: #A6DE8E"></i>', // Loja/restaurante
-    className: 'bg-transparent border-0'
+      html: '<i class="bi bi-heart-fill fs-4" style="color: #FF6B6B"></i>',
+      className: 'bg-transparent border-0'
     }),
-    popup: "Onde comemos a melhor comida da cidade 🍴"
+    popup: `
+      <b>Nossos encontros pós escola</b><br>
+      <small>Praça perto da Escola</small><br><br>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="./assets/privilegiado/encontros-escola.jpg" style="border: 1px solid #FFB6C1; border-radius: 5px;" width="50%">
+        <p style="margin: 0; color: #FFB6C1;"> Em 2023</p>
+      </div>
+    `
+  },
+
+  // RESTAURANTES/COMIDAS (coração + garfo)
+  {
+    coords: [-19.920449883092356, -43.91957013288003],
+    title: "Primeiro Encontro",
+    icon: L.divIcon({
+      html: `
+        <div style="position:relative">
+          <i class="bi bi-heart-fill fs-4" style="color: #FF6B6B"></i>
+          <i class="bi bi-utensils-fill fs-6" 
+             style="color: white; position: absolute; top: 8px; left: 8px"></i>
+        </div>
+      `,
+      className: 'bg-transparent border-0'
+    }),
+    popup: `
+      <b>Primeiro Encontro 💞</b><br>
+      <small>Fomos no Cinema do Boulevard</small><br><br>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="./assets/privilegiado/primeiro-encontro.jpg" style="border: 1px solid #FFB6C1; border-radius: 5px;" width="50%">
+        <p style="margin: 0; color: #FFB6C1;">30/09/2023</p>
+      </div>
+    `
+  },
+
+  // VIAGENS (mala rosa)
+  {
+    coords: [-21.187822289750255, -43.97468056697253], // Barroso
+    title: "Primeira Viagem",
+    icon: L.divIcon({
+      html: '<i class="bi bi-suitcase-fill fs-4" style="color: #FFB6C1"></i>',
+      className: 'bg-transparent border-0'
+    }),
+    popup: `
+      <b>Nossa primeira viagem juntos</b><br>
+      <small>Barroso - MG</small><br><br>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <img src="./assets/privilegiado/barroso-nos.jpg" style="border: 2px solid #FFB6C1; border-radius: 5px;" width="50%">
+        <p style="margin 0; color: #FFB6C1;">12/10/2024</p>
+      </div>
+    `
+  },
+
+  // FUTUROS PLANOS (estrela)
+  {
+    coords: [-22.9068, -43.1729], // Rio de Janeiro
+    title: "Próxima Viagem",
+    icon: L.divIcon({
+      html: '<i class="bi bi-stars fs-4" style="color: #A6DE8E"></i>',
+      className: 'bg-transparent border-0'
+    }),
+    popup: `
+      <b>Próxima aventura!</b><br>
+      <small>Rio de Janeiro</small><br>
+      <i>Planejado para Dez/2025</i>
+    `
   }
 ];
 

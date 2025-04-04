@@ -16,6 +16,7 @@
   footer {
     position: relative; /* Ajuste para fixar no final da página */
     bottom: 0;
+    padding: 0 !important;
     width: 100%;
     font-size: 14px;
     background-color: #0E1012; /* Cor de fundo */
