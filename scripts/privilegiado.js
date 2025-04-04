@@ -36,61 +36,99 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-  // Efeito background animado
+  // Coordenadas aproximadas de BH (Latitude, Longitude)
+const BH_COORDS = {
+  lat: -19.9167, 
+  lng: -43.9345,
+  tolerance: 0.1 // Graus de tolerância (~11km)
+};
 
-  gsap.registerPlugin(ScrollTrigger);
-
-/* SMOOTH SCROLL */
-const scroller = new LocomotiveScroll({
-  el: document.querySelector(".container"),
-  smooth: true
-});
-
-scroller.on("scroll", ScrollTrigger.update);
-
-ScrollTrigger.scrollerProxy(".container", {
-  scrollTop(value) {
-    return arguments.length
-      ? scroller.scrollTo(value, 0, 0)
-      : scroller.scroll.instance.scroll.y;
-  },
-  getBoundingClientRect() {
-    return {
-      left: 0,
-      top: 0,
-      width: window.innerWidth,
-      height: window.innerHeight
-    };
+function verificaLocalizacao() {
+  if (!navigator.geolocation) {
+    console.log("Geolocalização não suportada");
+    return;
   }
-});
 
-ScrollTrigger.addEventListener("refresh", () => scroller.update());
+  navigator.geolocation.getCurrentPosition(
+    (position) => {
+      const userLat = position.coords.latitude;
+      const userLng = position.coords.longitude;
+      
+      // Calcula diferença das coordenadas
+      const diffLat = Math.abs(userLat - BH_COORDS.lat);
+      const diffLng = Math.abs(userLng - BH_COORDS.lng);
 
-ScrollTrigger.refresh();
+      // Verifica se está dentro da área
+      if (diffLat < BH_COORDS.tolerance && diffLng < BH_COORDS.tolerance) {
+        document.getElementById('mensagemSecreta').classList.remove('d-none');
+        document.getElementById('textoSecreto').innerHTML += 
+          `<br><small class="text-muted">Precisão: ${position.coords.accuracy.toFixed(1)} metros</small>`;
+      } else {
+        document.getElementById('mensagemErro').classList.remove('d-none');
+      }
+    },
+    (error) => {
+      document.getElementById('mensagemErro').classList.remove('d-none');
+      console.error("Erro na geolocalização:", error);
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    }
+  );
+}
 
-/* COLOR CHANGER */
-window.addEventListener("load", function () {
-  const scrollColorElems = document.querySelectorAll("[data-bgcolor]");
-  scrollColorElems.forEach((colorSection, i) => {
-    const prevBg = i === 0 ? "" : scrollColorElems[i - 1].dataset.bgcolor;
-    const prevText = i === 0 ? "" : scrollColorElems[i - 1].dataset.textcolor;
+// Executa quando a página carregar
+verificaLocalizacao();
 
-    ScrollTrigger.create({
-      trigger: colorSection,
-      scroller: ".container",
-      start: "top 50%",
-      onEnter: () =>
-        gsap.to("body", {
-          backgroundColor: colorSection.dataset.bgcolor,
-          color: colorSection.dataset.textcolor,
-          overwrite: "auto"
-        }),
-      onLeaveBack: () =>
-        gsap.to("body", {
-          backgroundColor: prevBg,
-          color: prevText,
-          overwrite: "auto"
-        })
-    });
-  });
+
+// Inicializa o mapa
+const map = L.map('mapaAmor').setView([-19.9167, -43.9345], 15); // Coordenadas de BH + zoom
+
+
+const estiloPersonalizado = {
+  colorPrincipal: '#FFB6C1',   // Rosa claro
+  estradas: '#FFB6C1',         // Rosa claro para estradas
+  fundo: '#0A0A0A',            // Preto profundo
+  texto: '#FFB6C1',            // Rosa claro para textos
+  destaque: '#FFFFFF'          // Branco para contrastes
+};
+
+    
+// Adiciona o mapa base (OpenStreetMap)
+L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap, © CartoDB'
+}).addTo(map);
+
+// Marcadores personalizados
+const lugares = [
+  {
+    coords: [-19.9175, -43.9346],
+    title: "Primeiro Beijo",
+    icon: L.divIcon({
+      html: '<i class="bi bi-heart-fill fs-4 text-danger"></i>',
+      className: 'bg-transparent border-0'
+    }),
+    popup: "Aquele momento mágico no parque ❤️"
+  },
+  {
+    coords: [-19.9190, -43.9380],
+    title: "Restaurante Favorito",
+    icon: L.divIcon({
+      html: '<i class="bi bi-shop-window fs-4" style="color: #A6DE8E"></i>', // Loja/restaurante
+    className: 'bg-transparent border-0'
+    }),
+    popup: "Onde comemos a melhor comida da cidade 🍴"
+  }
+];
+
+// Adiciona os marcadores
+lugares.forEach(lugar => {
+  L.marker(lugar.coords, { 
+    title: lugar.title,
+    icon: lugar.icon
+  })
+  .addTo(map)
+  .bindPopup(lugar.popup);
 });

@@ -92,20 +92,17 @@
     display: block;
   }
 
+  /*Estilo para borda das fotos*/
   .neon-border-privilegiado {
     width: 90%;
     max-width: 400px;
     margin: 27px auto;
     border: 2px solid #FFB6C1; /* Rosa claro */
     border-radius: 10px;
+    box-shadow: 0 0 5px #FFB6C1, 0 0 5px #FFB6C1, 0 0 5px #FFB6C1;
   }
 
-  .neon-border-privilegiado:hover {
-    transform: scale(1.05) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px #FFB6C1, 0 0 10px #FFB6C1, 0 0 10px #FFB6C1; /* Intensifica o efeito ao passar o mouse */
-  }
-
+  /* Estilização do carrossel */
   .carousel-inner {
   top: 0;
   left: 0;
@@ -115,6 +112,89 @@
   z-index: 1;
   }
 
+    /* Estilização da mensagem secreta */
+  #mensagemSecreta {
+    border: 2px solid #FFB6C1;
+    background: rgba(22, 22, 22, 0.95);
+    color: #DEDEDE;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(166, 222, 142, 0.3);
+  }
+
+  #mensagemSecreta:hover {
+    transform: scale(1.05) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #FFB6C1, 0 0 10px #FFB6C1, 0 0 10px #FFB6C1; /* Intensifica o efeito ao passar o mouse */
+  }
+
+  #mensagemSecreta .alert-heading {
+    color: #FFB6C1;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Efeito de aparecimento suave */
+  .d-none {
+    transition: opacity 0.5s ease;
+  }
+
+  .d-none.show {
+    display: block !important;
+    opacity: 1;
+  }
+
+  .titulo-privilegiado {
+    margin-top: 45px;
+    font-size: 45px;
+  }
+
+  .subtitulo-privilegiado {
+    font-size: 30px;
+  }
+
+  #mapaAmor {
+    background-color: #0A0A0A; /* Fundo preto */
+  }
+  
+  /* Estilização dos elementos do mapa */
+  .leaflet-container {
+    background-color: #0A0A0A !important;
+  }
+  
+  
+  .leaflet-container .leaflet-control-attribution,
+  .leaflet-container .leaflet-control-scale,
+  .leaflet-container .leaflet-popup-content {
+    color: #FFB6C1 !important;
+    background-color: rgba(10, 10, 10, 0.8) !important;
+  }
+  
+  .leaflet-container path {
+    stroke: #FFB6C1 !important; /* Contornos das estradas */
+  }
+
+  /* Popup estilizado */
+  .leaflet-popup-content {
+    background-color: #212529 !important;
+    color: #DEDEDE !important;
+    border-radius: 10px !important;
+    padding: 10px;
+  }
+
+  .leaflet-popup-tip {
+    background: #212529 !important;
+  }
+
+  @media (min-width: 767px) {
+    #mensagemSecreta {
+      width: 50%;
+    }
+    #mapaAmor{
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
 
 
   @media (max-width: 767px) {
