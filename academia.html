@@ -8,7 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.css">
 </head>
-  <body class="mb-2" style="margin-top: 97px;">
+  <body style="margin-top: 97px;">
 
 
     <!-- Cabeçalho do Site - Navbar -->
@@ -78,10 +78,10 @@
                 </p>
 
                 <div class="row justify-content-center mt-5">
-                  <div class="col-md-4">
+                  <div class="col-md-4 fade-in">
                     <img src="./assets/academia-gaby1.jpg" class="img-academia rounded" id="" alt="Equipamentos de treino">
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-md-4 fade-in">
                     <img src="./assets/academia-gaby2.jpg" class="img-academia rounded" id="img-academia2" alt="Gabriely treinando">
                   </div>
                 </div>
@@ -93,8 +93,8 @@
 
             <div class="row justify-content-center mt-5">
               <div class="col-md-8">
-                <h3 class="text-white text-center mb-4">Rotina de Treino</h3>
-                <table class="table table-dark table-striped">
+                <h3 class="text-white text-center mb-4 fade-in">Rotina de Treino</h3>
+                <table class="table table-dark table-striped fade-in">
                   <thead>
                     <tr>
                       <th>Dia</th>
@@ -131,14 +131,14 @@
 
             <div class="row justify-content-center mt-5 motivacao-section">
               <div class="col-md-8">
-                <h3 class="text-white text-center mb-4">Dicas de Motivação que a Gabriely utiliza:</h3>
+                <h3 class="text-white text-center mb-4 fade-in">Dicas de Motivação que a Gabriely utiliza:</h3>
                 <ul class="list-group">
-                  <li class="list-group-item">Estabeleça metas realistas e acompanhe seu progresso.</li>
-                  <li class="list-group-item">Treine com a mentalidade estabelizida.</li>
-                  <li class="list-group-item">Ouça músicas que te motivem durante os treinos.</li>
-                  <li class="list-group-item">Lembre-se de que cada pequeno progresso é uma vitória.</li>
-                  <li class="list-group-item">Não esqueça do seu propósito na academia.</li>
-                  <li class="list-group-item">Ser autodisciplinar e está no processo independente do estado.</li>
+                  <li class="list-group-item fade-in">Estabeleça metas realistas e acompanhe seu progresso.</li>
+                  <li class="list-group-item fade-in">Treine com a mentalidade estabelizida.</li>
+                  <li class="list-group-item fade-in">Ouça músicas que te motivem durante os treinos.</li>
+                  <li class="list-group-item fade-in">Lembre-se de que cada pequeno progresso é uma vitória.</li>
+                  <li class="list-group-item fade-in">Não esqueça do seu propósito na academia.</li>
+                  <li class="list-group-item fade-in">Ser autodisciplinar e está no processo independente do estado.</li>
                 </ul>
               </div>
             </div>
@@ -146,9 +146,9 @@
 
             <div class="row justify-content-center mt-5">
               <div class="col-md-8">
-                <h3 class="text-white text-center mb-4">Depoimentos</h3>
+                <h3 class="text-white text-center mb-4 fade-in">Depoimentos</h3>
                 <div id="depoimentosCarousel" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
+                  <div class="carousel-inner fade-in">
                     <div class="carousel-item active">
                       <p class="text-white text-center">"A Gabriely é uma inspiração! Sempre dedicada e motivada nos treinos." - João Paulo</p>
                     </div>
@@ -159,11 +159,11 @@
                       <p class="text-white text-center">"Minha referência em ter uma boa disciplina sempre será a Gabriely." - Brener</p>
                     </div>
                   </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="prev">
+                  <button class="carousel-control-prev fade-in" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Anterior</span>
                   </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="next">
+                  <button class="carousel-control-next fade-in" type="button" data-bs-target="#depoimentosCarousel" data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Próximo</span>
                   </button>
@@ -180,14 +180,15 @@
     
     
 
-    <footer class="text-center text-white py-3 mt-5 rodape">
-      <p class="mb-0">Desenvolvido por <strong>Brener</strong></p>
-    </footer>
-
+    
     
     <button id="backToTop" class="btn btn-secondary position-fixed" style="bottom: 20px; right: 20px; display: none;">
       <img src="./assets/icon-voltartop.png" alt="Voltar ao Topo" style="width: 24px; height: 24px;">
     </button>
+
+    <footer class="text-center text-white py-3 mt-5 rodape">
+      <p class="mb-0">Desenvolvido por <strong>Brener</strong></p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./scripts/academia.js"></script>
