@@ -288,3 +288,126 @@ lugares.forEach(lugar => {
   .addTo(map)
   .bindPopup(lugar.popup);
 });
+
+
+
+
+
+const cupons = [
+  {
+      titulo: "Jantar Romântico",
+      descricao: "1 rodízio da comida que você escolher + sobremesa de chocolate",
+      codigo: "AMOR-215",
+      icon: "bi-balloon-heart-fill",
+      resgatado: false
+  },
+  {
+      titulo: "Noite de Cinema",
+      descricao: "2 filmes da sua escolha + pipoca gourmet e muitos chocolates",
+      codigo: "CINE-2025",
+      icon: "bi-film",
+      resgatado: false
+  },
+  {
+      titulo: "Massagem Relaxante",
+      descricao: "1 hora de massagem relaxante + carinhos e muitos beijos",
+      codigo: "RELAX-TOTAL",
+      icon: "bi-flower1",
+      resgatado: false
+  }
+];
+
+function criarCupons() {
+  const container = document.getElementById('cupons-container');
+  container.innerHTML = ''; // Limpa container
+
+  cupons.forEach((cupom, index) => {
+      const cupomHTML = `
+      <div class="col-12 col-md-6 col-lg-4">
+          <div class="cupom-card" data-index="${index}">
+              <div class="cupom-inner">
+                  <div class="cupom-front">
+                      <i class="bi ${cupom.icon} fs-1" style="color: #FFB6C1;"></i>
+                      <h4 class="mt-3 text-center">${cupom.titulo}</h4>
+                      <small class="text-muted">Clique para revelar</small>
+                  </div>
+                  <div class="cupom-back">
+                      <span class="cupom-status">${cupom.resgatado ? 'RESGATADO' : 'DISPONÍVEL'}</span>
+                      <p class="text-center">${cupom.descricao}</p>
+                      <div class="my-3">
+                          <small class="text-muted">Código:</small>
+                          <h5 class="mt-3">${cupom.codigo}</h5>
+                      </div>
+                      <button class="btn btn-resgate" ${cupom.resgatado ? 'disabled' : ''}>
+                          ${cupom.resgatado ? '❤️ Já Usado' : 'Resgatar'}
+                      </button>
+                  </div>
+              </div>
+          </div>
+      </div>`;
+      container.innerHTML += cupomHTML;
+  });
+
+  // Adiciona eventos
+  document.querySelectorAll('.cupom-card').forEach((card, index) => {
+      card.addEventListener('click', function(e) {
+          // Não vira se clicou no botão
+          if (!e.target.classList.contains('btn-resgate')) {
+              this.classList.toggle('flipped');
+          }
+      });
+  });
+
+  document.querySelectorAll('.btn-resgate').forEach((btn, index) => {
+      btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (!cupons[index].resgatado) {
+              cupons[index].resgatado = true;
+              this.disabled = true;
+              this.textContent = '❤️ Já Usado';
+              this.closest('.cupom-card').querySelector('.cupom-status').textContent = 'RESGATADO';
+              
+              // Mostra toast
+              const toast = new bootstrap.Toast(document.getElementById('cupom-toast'));
+              toast.show();
+          }
+      });
+  });
+}
+
+
+// Sistema de Mensagens Secretas
+document.querySelectorAll('.mensagem-card').forEach(card => {
+  card.addEventListener('click', function(e) {
+      if (!e.target.closest('.btn-desafio')) return;
+
+      const tipo = this.classList.contains('puzzle') ? 'puzzle' : 
+                  this.classList.contains('cripto-visual') ? 'visual' : 'padrao';
+      
+      switch(tipo) {
+          case 'padrao':
+              const senha = prompt("Digite o código decifrado (DD/MM/AAAA):");
+              if (senha === this.dataset.senha) this.classList.add('revelada');
+              break;
+          
+      }
+  });
+});
+
+// Sistema de Código de Cores
+document.querySelectorAll('.cor-box').forEach(box => {
+  let clickCount = 0;
+  
+  box.addEventListener('click', function() {
+      clickCount = (clickCount + 1) % 3; // Cicla 0-1-2
+      this.className = `cor-box ${['', 'ativa', 'ativa'][clickCount]}`;
+      verificarCodigo(this.closest('.mensagem-card'));
+  });
+});
+
+
+// Chame a função após o carregamento
+document.addEventListener('DOMContentLoaded', () => {
+  criarCupons();
+  embaralharPecas(); // Adicione esta linha
+});
