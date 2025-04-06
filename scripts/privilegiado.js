@@ -135,7 +135,7 @@ const lugares = [
       <b>Nossos encontros pós escola 💘🏫</b><br>
       <small>Praça perto da Escola</small><br><br>
       <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="./assets/privilegiado/encontros-escola.jpg" style="border: 2px solid #FFB6C1; border-radius: 5px;" width="50%">
+        <img src="./assets/privilegiado/encontros-escola.png" style="border: 2px solid #FFB6C1; border-radius: 5px;" width="50%">
         <p style="margin: 0; color: #FFB6C1;"> Em 2023</p>
       </div>
     `
