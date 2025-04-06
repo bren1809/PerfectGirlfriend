@@ -411,3 +411,26 @@ document.addEventListener('DOMContentLoaded', () => {
   criarCupons();
   embaralharPecas(); // Adicione esta linha
 });
+
+
+document.getElementById("revealMessage").addEventListener("click", function () {
+  const hiddenMessage = document.getElementById("hiddenMessage");
+  hiddenMessage.style.display = "block";
+});
+
+
+const backToTopButton = document.getElementById("backToTop");
+
+  // Mostra o botão quando o usuário rolar para baixo
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 300) { // Exibe o botão após rolar 300px
+      backToTopButton.style.display = "block";
+    } else {
+      backToTopButton.style.display = "none";
+    }
+  });
+
+  // Rola suavemente para o topo ao clicar no botão
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });

@@ -597,6 +597,26 @@ body {
 
 /* sumir o nome do site em certo tamanho de dispositivo por causa do espaço */
 @media (max-width: 587px)  {
+  #quiz-privilegiado {
+    width: 100% !important;
+    padding: 10px;
+    margin: 0 auto;
+  }
+
+  #container-binario {
+    width: 90%;
+  }
+
+  .quiz-card {
+    width: 100%;
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  #submitQuiz {
+    width: 100%;
+    margin-top: 10px;
+  }
   
   #quiz-container {
     width: 100%;

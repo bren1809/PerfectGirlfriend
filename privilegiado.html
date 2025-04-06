@@ -205,9 +205,9 @@
                       </div>
               
                       <div class="col-12 col-lg-10">
-                          <div class="row g-4" id="mensagens-container">
+                          <div class="row g-4 mb-5" id="mensagens-container">
                               <!-- Mensagem 1 - Código Binário -->
-                              <div class="col-12 col-md-6 col-lg-12" style="width: 50%; margin: 0 auto;">
+                              <div id="container-binario" class="col-12 col-md-6 col-lg-12">
                                   <div class="mensagem-card" data-senha="21/09/2024">
                                       <div class="mensagem-frente">
                                         <p>Código Binário:</p>
@@ -229,8 +229,48 @@
 
 
 
-              
+              <hr class="mt-5">
 
+
+
+              <div class="col-12 col-sm-12 rounded remove-padding-top" style="padding: 40px; background-color: #212529;">
+                <h2 class="text-center pr-titule display-4 display-md-3 titulo-conteudo fade-in" style="color: #DEDEDE; font-weight: 500;">Quiz</h2>
+                <h3 class="text-center mt-3 mb-5 fade-in">Sobre nosso relacionamento</h3>
+                <div id="quiz-privilegiado" class="mt-4 fade-in">
+                  <!-- Perguntas do quiz serão geradas dinamicamente aqui -->
+                </div>
+                <div class="text-center mt-4">
+                  <button id="submitQuiz" class="btn btn-success fade-in">Enviar Respostas</button>
+                  <p id="quizResult" class="mt-3 text-white" style="font-size: 18px;"></p>
+              </div>
+            </div>
+
+
+            <div class="closing-message" style="width: 100%;">
+              <p class="intro-text fade-in">
+                E assim somos nós.  
+                Entre risos espontâneos, conversas que atravessam a madrugada e silêncios que acolhem mais do que mil palavras, vamos traçando nossa história — feita de amor, de fé e de pequenos gestos que dizem tudo. Somos o reflexo de um sentimento raro, desses que nascem devagar e florescem com força, mesmo nos dias mais nublados.
+              </p>
+              <p class="intro-text fade-in">
+                Com você, Gaby, aprendi que o amor verdadeiro mora nos detalhes: no jeito que você me olha, nas palavras doces que diz sem nem perceber, na calma que você traz só por estar perto. Cada instante ao seu lado é uma poesia viva, escrita com o toque das nossas mãos entrelaçadas, com o som das nossas gargalhadas, com o abraço que sempre me encontra quando preciso de abrigo.
+              </p>
+              <p class="intro-text fade-in">
+                Esse espaço que construí aqui é mais do que um site — é um lar digital para guardar, com carinho, tudo aquilo que sinto por você. É um jeito de eternizar nossa conexão, de mostrar ao mundo (ou pelo menos a nós dois) que o amor, quando é sincero, se transforma em tudo: em força, em esperança, em lar.
+              </p>
+              <p class="intro-text fade-in">
+                Se até aqui foi lindo, mal posso imaginar o que ainda vem.  
+                Com você, tudo é poesia.  
+                Com você, tudo faz sentido.  
+                E com você, eu quero sempre mais.
+              </p>
+            </div>
+
+
+            <div id="closingMessage" class="closing-message fade-in" style="font-size: 19px;">
+              Obrigado por participar! 🎉
+              <button id="revealMessage" class="btn-neon1">Clique para uma surpresa!</button>
+              <p id="hiddenMessage" class="hidden-message">Você é incrível! 🌟</p>
+            </div>
 
 
               </div>
@@ -244,6 +284,10 @@
     
     
 
+    <button id="backToTop" class="btn btn-secondary position-fixed" style="bottom: 20px; right: 20px; display: none;">
+    <img src="./assets/icon-voltartop.png" alt="Voltar ao Topo" style="width: 24px; height: 24px;">
+    </button>    
+
     <footer class="text-center text-white py-3 mt-5 rodape">
       <p class="mb-0">Desenvolvido por <strong>Brener</strong></p>
     </footer>
@@ -254,4 +298,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="./scripts/privilegiado.js"></script>
+    <script src="./scripts/quiz.js"></script>
   </body>
